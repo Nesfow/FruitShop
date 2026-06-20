@@ -12,7 +12,7 @@ public class FruitFactoryTests
         Fruit apple = FruitFactory.Create("apple");
 
         Assert.Equal("Apple", apple.Name);
-        Assert.Equal(1.0m, apple.BasePrice);
+        Assert.Equal(2.0m, apple.BasePrice);
     }
 
     [Fact]
@@ -29,7 +29,7 @@ public class FruitFactoryTests
         Fruit banana = FruitFactory.Create("banana");
 
         Assert.Equal("Banana", banana.Name);
-        Assert.Equal(1.5m, banana.BasePrice);
+        Assert.Equal(0.3m, banana.BasePrice);
     }
 
     [Fact]
@@ -37,7 +37,7 @@ public class FruitFactoryTests
     {
         Fruit banana = FruitFactory.Create("banana");
 
-        Assert.IsType<DiscountPricingStrategy>(banana.PricingStrategy);
+        Assert.IsType<PerItemPricingStrategy>(banana.PricingStrategy);
     }
 
     [Fact]
@@ -54,7 +54,7 @@ public class FruitFactoryTests
     {
         Fruit cherry = FruitFactory.Create("cherry");
 
-        Assert.IsType<PerKgPricingStrategy>(cherry.PricingStrategy);
+        Assert.IsType<DiscountPricingStrategy>(cherry.PricingStrategy);
     }
 
     [Theory]
