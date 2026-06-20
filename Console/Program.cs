@@ -16,4 +16,4 @@ foreach (var item in order.Lines)
 
 }
 Console.WriteLine("=================================================");
-Console.WriteLine($"Total: ${order.Lines.Sum(x => x.LineCost)}");
+Console.WriteLine($"Total: ${order.CalculateTotal()}");
